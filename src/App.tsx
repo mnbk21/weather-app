@@ -4,23 +4,47 @@ import Title from "./components/Title"
 import Form from "./components/Form"
 import Results from "./components/Results"
 
+type Resultstate = {
+  country: string,
+  cityName: string,
+  temperature: string,
+  conditionText: string,
+  icon: string,
+}
+
 const App = () => {
 
   const [city , setCity] = useState<string>("")
+
+  const [results, setResults] = useState<Resultstate>({
+    country: "",
+    cityName: "",
+    temperature: "",
+    conditionText: "",
+    icon: ""
+  })
 
   const getWeather = (event: any) => {
   // const getWeather = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     fetch("https://api.weatherapi.com/v1/current.json?key=456796f3a2c2465688f133550241806&q=London&aqi=no")
       .then(res => res.json())
-      .then(data => console.log(data) )
+      .then(data => {
+        setResults({
+          country: data.location.country,
+          cityName: data.location.name,
+          temperature: data.current.temp_c,
+          conditionText: data.current.condition.text,
+          icon: data.current.condition.icon
+        })
+      })
   }
 
   return(
     <div>
       <Title />
       <Form setCity={setCity} getWeather={getWeather}/>
-      <Results />
+      <Results results={results}/>
     </div>
 
 

@@ -7,13 +7,13 @@ type FormProps = {
 }
 
 
-// const Form = (props: FormProps) => {
+const Form = (props: FormProps) => {
 
-  const Form = ({getWeather, setCity}: FormProps) => {
+  // const Form = ({getWeather, setCity}: FormProps) => {
 
-  // const [city , setCity] = useState<string>("")
+  const [city , setCity] = useState<string>("")
 
-  // // const getWeather = (event: any) => {
+  // const getWeather = (event: any) => {
   // const getWeather = (event: React.MouseEvent<HTMLButtonElement>) => {
   //   event.preventDefault()
   //   fetch("https://api.weatherapi.com/v1/current.json?key=456796f3a2c2465688f133550241806&q=London&aqi=no")
@@ -23,11 +23,13 @@ type FormProps = {
 
   return (
     <form action="">
-      {/* <input type="test" name="city" placeholder="都市名" onChange={event => props.setCity(event.target.value)}/> */}
-      {/* <button type="submit" onClick={props.getWeather}>Get weather</button> */}
-
-      <input type="test" name="city" placeholder="都市名" onChange={event => {setCity(event.target.value)}}/>
-      <button type="submit" onClick={getWeather}>Get weather</button>
+      <input type="test" name="city" placeholder="都市名" onChange={event => props.setCity(event.target.value)}/>
+      {city}
+      <button type="submit" onClick={props.getWeather}>Get weather</button>
+    
+      {/* <input type="test" name="city" placeholder="都市名" onChange={event => {setCity(event.target.value)}}/>
+      <div>{city}</div>
+      <button type="submit" onClick={getWeather}>Get weather</button> */}
     </form>
   )
 }
