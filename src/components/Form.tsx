@@ -3,7 +3,7 @@ import { useState } from "react"
 
 type FormProps = {
   setCity: React.Dispatch<React.SetStateAction<string>>
-  getWeather: (event: any) => void
+  getWeather: (event: React.FormEvent<HTMLFormElement>) => void
 }
 
 
@@ -22,10 +22,10 @@ const Form = (props: FormProps) => {
   // }
 
   return (
-    <form action="">
+    <form onSubmit={props.getWeather}>
       <input type="test" name="city" placeholder="都市名" onChange={event => props.setCity(event.target.value)}/>
       {city}
-      <button type="submit" onClick={props.getWeather}>Get weather</button>
+      <button type="submit">Get weather</button>
     
       {/* <input type="test" name="city" placeholder="都市名" onChange={event => {setCity(event.target.value)}}/>
       <div>{city}</div>
