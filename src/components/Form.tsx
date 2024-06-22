@@ -23,7 +23,7 @@ const Form = (props: FormProps) => {
 
   return (
     <form onSubmit={props.getWeather}>
-      <input type="test" name="city" placeholder="都市名" onChange={event => props.setCity(event.target.value)}/>
+      <input type="text" name="city" placeholder="都市名" onChange={event => props.setCity(event.target.value)}/>
       {city}
       <button type="submit">Get weather</button>
     

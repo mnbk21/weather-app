@@ -30,10 +30,10 @@ const Results = (props: ResultsProps) => {
       {/*「&&」ロジカルオペレーター：左辺がtrueの時だけ実行される(データが存在する時にだけ右辺を実行させる) */}
       {props.results.country &&
         <div>
-          <div>{props.results.country}</div>
-          <div>{props.results.cityName}</div>
-          <div>{props.results.temperature}<span>℃</span></div>
-          <div>
+          <div className="results-country">{props.results.country}</div>
+          <div className="results-city">{props.results.cityName}</div>
+          <div className="results-temp">{props.results.temperature}<span>℃</span></div>
+          <div className="results-condition">
             <img src={props.results.icon} alt="icon" />
             <span>{props.results.conditionText}</span>
           </div>
