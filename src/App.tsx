@@ -25,7 +25,6 @@ const App = () => {
   })
 
   const getWeather = (event: React.FormEvent<HTMLFormElement>) => {
-  // const getWeather = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     fetch(`https://api.weatherapi.com/v1/current.json?key=456796f3a2c2465688f133550241806&q=${city}&aqi=no`)
       .then(res => res.json())
