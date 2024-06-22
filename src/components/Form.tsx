@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+// import { useState } from "react"
 
 type FormProps = {
   setCity: React.Dispatch<React.SetStateAction<string>>
@@ -11,7 +11,7 @@ const Form = (props: FormProps) => {
 
   // const Form = ({getWeather, setCity}: FormProps) => {
 
-  const [city , setCity] = useState<string>("")
+  // const [city , setCity] = useState<string>("")
 
   // const getWeather = (event: any) => {
   // const getWeather = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -24,7 +24,7 @@ const Form = (props: FormProps) => {
   return (
     <form onSubmit={props.getWeather}>
       <input type="text" name="city" placeholder="都市名" onChange={event => props.setCity(event.target.value)}/>
-      {city}
+
       <button type="submit">Get weather</button>
     
       {/* <input type="test" name="city" placeholder="都市名" onChange={event => {setCity(event.target.value)}}/>
