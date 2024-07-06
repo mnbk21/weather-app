@@ -44,6 +44,7 @@ h1 {
 
 form {
   width: 100%;
+  margin-bottom: 30px;
 }
 
 /* Form.js */
@@ -57,7 +58,6 @@ input[type="text"] {
   color: #fff !important;
   font-weight: lighter;
   letter-spacing: 2px;
-  margin-bottom: 30px;
   margin-right: 20px;
   font-size: 18px;
 }
